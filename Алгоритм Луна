@@ -1,0 +1,24 @@
+s = input()
+if s.isdigit():
+    if len(s) != 16:
+        print('ошибка')
+    else:
+        a = 0
+        for i in range(0, len(s), 2):
+            n = int(s[i])
+            if n * 2 > 9:
+                a = a + (n * 2 - 9)
+            else:
+                a = a + n * 2
+        b = 0
+        for u in range(1, len(s), 2):
+            f = int(s[u])
+            b += f
+        n = a + b
+        if n % 10 == 0:
+            print('Корректный номер карты')
+        else:
+            print('Некорректный номер карты')
+else:
+    print('ошибка')
+    
